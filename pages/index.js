@@ -29,43 +29,31 @@ export default function Home() {
       <h1>0G Token Creator</h1>
       
       {!isConnected ? (
-        <button 
-          onClick={connectWallet}
-          style={{ padding: '10px 20px', background: '#f6851b', color: 'white', border: 'none', borderRadius: '5px' }}
-        >
+        <button onClick={connectWallet}>
           Connect Metamask
         </button>
       ) : (
         <div>
           <p>Wallet Connected!</p>
-          <div style={{ marginTop: '20px' }}>
-            <input
-              type="text"
-              placeholder="Token Name"
-              value={tokenName}
-              onChange={(e) => setTokenName(e.target.value)}
-              style={{ width: '100%', padding: '10px', marginBottom: '10px' }}
-            />
-            <input
-              type="text"
-              placeholder="Token Symbol"
-              value={tokenSymbol}
-              onChange={(e) => setTokenSymbol(e.target.value)}
-              style={{ width: '100%', padding: '10px', marginBottom: '10px' }}
-            />
-            <input
-              type="number"
-              placeholder="Token Supply"
-              value={tokenSupply}
-              onChange={(e) => setTokenSupply(e.target.value)}
-              style={{ width: '100%', padding: '10px', marginBottom: '10px' }}
-            />
-            <button 
-              style={{ padding: '10px 20px', background: '#4CAF50', color: 'white', border: 'none', borderRadius: '5px' }}
-            >
-              Create Token
-            </button>
-          </div>
+          <input
+            type="text"
+            placeholder="Token Name"
+            value={tokenName}
+            onChange={(e) => setTokenName(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Token Symbol"
+            value={tokenSymbol}
+            onChange={(e) => setTokenSymbol(e.target.value)}
+          />
+          <input
+            type="number"
+            placeholder="Token Supply"
+            value={tokenSupply}
+            onChange={(e) => setTokenSupply(e.target.value)}
+          />
+          <button>Create Token</button>
         </div>
       )}
     </div>
